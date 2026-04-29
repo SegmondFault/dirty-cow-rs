@@ -1,0 +1,26 @@
+# Rust build output
+/target/
+
+# Local VM disks and installation media
+*.qcow2
+*.qcow2.*
+*.iso
+
+# Other VM/runtime images
+*.img
+*.raw
+*.vdi
+*.vmdk
+*.ova
+*.ovf
+*.snapshot
+
+# macOS / editor noise
+.DS_Store
+.idea/
+*.swp
+*.swo
+
+# Local logs / scratch output
+*.log
+*.tmp
