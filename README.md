@@ -1,4 +1,4 @@
-# Dirty COW Rust Lab
+# Dirty COW Rust Implementation
 
 A small Rust lab for exploring **Dirty COW / CVE-2016-5195** on an intentionally vulnerable Linux VM.
 
