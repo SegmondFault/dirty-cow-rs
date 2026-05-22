@@ -11,13 +11,5 @@ name = "dirtycow"
 path = "src/main.rs"
 
 [[bin]]
-name = "dirtyfix"
-path = "src/dirtyfix.rs"
-
-[[bin]]
-name = "cowroot"
-path = "src/cowroot.rs"
-
-[[bin]]
-name = "cowrootstable"
-path = "src/cowrootstable.rs"
+name = "whynot"
+path = "src/whynot.rs"

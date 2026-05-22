@@ -1,6 +1,11 @@
 # Rust build output
 /target/
 
+# Local binaries / debug artifacts
+/whynot
+/rootsh_payload
+*.dSYM/
+
 # Local VM disks and installation media
 *.qcow2
 *.qcow2.*

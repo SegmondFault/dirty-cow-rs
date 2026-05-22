@@ -1,0 +1,69 @@
+﻿Note ./whynot is already loaded in lowprivs home folder, as is the python script
+WARNING -The python root fix script must be executed in approximately 9 seconds or the VM Kernel Panics
+
+
+1. Download VMSetup, start VM
+
+
+Private lab image link intentionally omitted from the public repo.
+
+
+2. Setup, start VM
+qemu-system-x86_64 \
+  -m 2048 \
+  -smp 2 \
+  -drive file=workingvm.qcow2,format=qcow2 \
+  -netdev user,id=n1,hostfwd=tcp:127.0.0.1:2223-:22 \
+  -device e1000,netdev=n1
+3. Login as user 1 (password is user1)
+ssh -p 2223 user1@127.0.0.1
+1. Whoami
+2. uname -r
+3. id lowpriv
+4. groups lowpriv
+5. sudo deluser lowpriv sudo 
+   1. (Confirms lowpriv not a sudoer)
+4. Login as Lowpriv, prove low priveledges
+1. su - lowpriv 
+   1. (login as lowpriv, password is lowpriv)
+2. whoami
+3. id
+4. groups
+5. cat /etc/shadow
+
+
+5. Exploit time!
+
+
+1. ./whynot (builds user a from froom,)
+2. su a 
+   1. (become a, the new root, password is a)
+3. Whoami (shows root)
+4. Id
+
+
+6. Quickfix - Do this quickly!
+
+
+1. Python Fixup 
+   1. (Replace root)
+
+
+sudo python3 restore_root_passwd.py
+7. Create Persistence
+
+
+1. usermod -aG sudo lowpriv 
+   1. (upgrade lowpriv)
+
+
+8. Demo Persistence
+
+
+2. su - lowpriv
+3. sudo whoami
+4. sudo cat /etc/shadow
+
+
+(-8) If you wish to repeat the process…
+(sudo deluser lowpriv sudo) - make sure low priv isnt a sudoer

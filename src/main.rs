@@ -3,8 +3,8 @@ use std::io::{Read, Seek, SeekFrom, Write};
 use std::os::unix::io::AsRawFd;
 use std::ptr;
 use std::sync::{
-    atomic::{AtomicBool, Ordering},
     Arc,
+    atomic::{AtomicBool, Ordering},
 };
 use std::thread;
 use std::time::{Duration, Instant};
@@ -13,9 +13,7 @@ fn main() -> std::io::Result<()> {
     let target_path = "/tmp/cowtest";
     let new_content = "after--after--after-\n";
 
-    let file = OpenOptions::new()
-        .read(true)
-        .open(target_path)?;
+    let file = OpenOptions::new().read(true).open(target_path)?;
 
     let map = unsafe {
         libc::mmap(
