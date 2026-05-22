@@ -1,13 +1,6 @@
 # Dirty COW Rust Implementation
 
-A small Rust lab for exploring **Dirty COW / CVE-2016-5195** on an intentionally vulnerable Linux VM, with the usual amount of low-level Linux nonsense and a healthy respect for snapshots.
-
-This is very much a **work in progress**. The code technically works, in the sense that it can trigger the Dirty COW write primitive on an old vulnerable Ubuntu box, but the project is currently at the fun/frustrating stage where the race is either:
-
-- too aggressive, and risks getting properly *dirty* by corrupting the target system, or
-- too cautious, and loses the race before anything useful happens.
-
-In other words: this is not a polished exploit framework. This is a learning project, a controlled lab, and a slightly chaotic tour through copy-on-write behaviour, memory mappings, process memory, and kernel race conditions.
+A small  lab for exploring **Dirty COW / CVE-2016-5195** on an intentionally vulnerable Linux VM, with the usual amount of low-level Linux nonsense and a healthy respect for snapshots.
 
 The runnable path is **`whynot`**. Most of the other Rust files are kept as archaeological evidence: useful traces of false starts, timing experiments, repair attempts, and "ah, so that is how `/etc/passwd` gets sad" moments.
 
